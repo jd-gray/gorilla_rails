@@ -1,4 +1,6 @@
-%h3= link_to "New Post", new_post_path
-
-- @posts.each do |post|
-	= link_to post.title, post
+#posts.transitions-enabled
+	- @posts.each do |post|
+		.box.panel.panel-default
+			= link_to (image_tag post.image.url(:medium)), post
+			.panel-body	
+				%h2= link_to post.title, post

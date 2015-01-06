@@ -1,1 +1,6 @@
-_form.html.haml
+= simple_form_for @post, html: { multipart: true } do |f|
+	= f.input :title, input_html: { class: 'form-control' }
+	= f.text_area :description, input_html: { class: 'form-control' }
+	= f.button :submit, class: "btn btn-primary"
+
+= link_to "Cancel", root_path

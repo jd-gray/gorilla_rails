@@ -1,1 +1,4 @@
-%h1 Hello World
+%h3= link_to "New Post", new_post_path
+
+- @posts.each do |post|
+	= link_to post.title, post

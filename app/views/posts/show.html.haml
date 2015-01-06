@@ -1,0 +1,6 @@
+%h1= @post.title
+%p= @post.description
+
+= link_to "Home", root_path
+= link_to "Edit", edit_post_path
+= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }

@@ -15,6 +15,7 @@ gem 'spring',        group: :development
 
 # Added gems
 gem 'mongoid', '~> 4.0.0'
+gem 'bcrypt', '~> 3.1.9'
 gem 'haml', '~> 4.0.6'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'

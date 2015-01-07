@@ -1,0 +1,7 @@
+%h1 Sign Up
+= simple_form_for @user, html: { multipart: true } do |f|
+	= f.input :username
+	= f.input :email
+	= f.label :password
+	= f.password_field :password
+	= f.button :submit, class: "btn btn-primary"

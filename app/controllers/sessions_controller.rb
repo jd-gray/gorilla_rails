@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 	def destroy
 		# delete key/value pair in sessions
 		session.delete(:user_id)
-		redirect_to login_path
+		redirect_to root_path
 	end
 end

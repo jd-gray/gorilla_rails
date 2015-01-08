@@ -1,6 +1,9 @@
 = image_tag @post.image.url(:medium)
 %h1= @post.title
 %p= @post.description
+%p 
+	Created by:
+	= @post.user.username
 
 = link_to "Edit", edit_post_path
 = link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }

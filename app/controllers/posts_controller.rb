@@ -9,11 +9,13 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		current_user = User.find(session[:user_id])
+		@post = current_user.posts.build
 	end
 
 	def create
-		@post = Post.new(post_params)
+		current_user = User.find(session[:user_id])
+		@post = current_user.posts.build(post_params)
 
 		if @post.save
 			redirect_to @post, notice: "Created new post!"

@@ -6,13 +6,13 @@ class User
   attr_reader :password
 
   def password=(unencrypted_password)
-  	# unless unencrypted_password.empty?
+  	 unless unencrypted_password.empty?
   		# store unencrypted pw in memory
-  		# @password = unencrypted_password
+  		@password = unencrypted_password
   		# use BCrypt to encrypt plain pw
   		# and store it in DB
   		self.password_digest = BCrypt::Password.create(unencrypted_password)
-  	# end
+  	 end
   end
 
   # method to auth user

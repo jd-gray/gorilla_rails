@@ -1,6 +1,7 @@
-#posts.transitions-enabled
-	- @posts.each do |post|
-		.box.panel.panel-default
-			= link_to (image_tag post.image.url(:medium)), post
-			.panel-body	
-				%h2= link_to post.title, post
+- if logged_in?
+	#posts.transitions-enabled
+		- @posts.each do |post|
+			.box.panel.panel-default
+				= link_to (image_tag post.image.url(:medium)), post
+				.panel-body	
+					%h2= link_to post.title, post

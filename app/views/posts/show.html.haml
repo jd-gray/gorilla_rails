@@ -5,5 +5,9 @@
 	Created by:
 	= @post.user.username
 
-= link_to "Edit", edit_post_path
-= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }
+- if @post.user.username == current_user.username
+	= link_to "Edit", edit_post_path
+	= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }
+
+
+

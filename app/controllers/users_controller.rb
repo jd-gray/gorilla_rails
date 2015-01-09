@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :user_find, only: [:show, :edit, :update, :destroy]
+
 	def new
 		@user = User.new
 	end
@@ -13,11 +15,18 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def edit
+	def show
+	end
 
+	def edit
 	end
 
 	def update
+    	if @user.update(user_params)
+      		redirect_to posts_path
+    	else
+      		render 'edit'
+    	end
 	end
 
 	def destroy
@@ -27,5 +36,9 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:username, :email, :password)
+	end
+
+	def user_find
+		@user = User.find(params[:id])
 	end
 end

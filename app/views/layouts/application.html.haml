@@ -21,7 +21,7 @@
 				.ul.nav.navbar-nav
 					- if logged_in?
 						%li= link_to "New Post", new_post_path
-						%li= link_to "Account"
+						%li= link_to "Account", edit_user_path(current_user.id)
 						%li= link_to "Log Out", logout_path, method: :delete
 						%li
 							= "Hello,"

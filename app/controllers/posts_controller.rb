@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(post_params)
 
 		if @post.save
-			redirect_to @post, notice: "Created new post!"
+			redirect_to @post
 		else
 			render 'new'
 		end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			redirect_to @post, notice: "Post successfully updated!"
+			redirect_to @post
 		else
 			render 'edit'
 		end

@@ -35,4 +35,5 @@ class User
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   # length is 6-20
   validates :password, presence: true, length: { in: 6..20 }, confirmation: true
+  # unless => password_digest.present?
 end

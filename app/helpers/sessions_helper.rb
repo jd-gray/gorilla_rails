@@ -10,7 +10,7 @@ module SessionsHelper
 	end
 
 	def user_authorized?
-		if @current_user === nil
+		if session[:user_id] === nil
 			redirect_to root_path
 		end
 	end

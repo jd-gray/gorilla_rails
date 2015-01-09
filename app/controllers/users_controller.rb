@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :user_find, only: [:show, :edit, :update, :destroy]
-	# before_action :user_authorized?
-	
+	before_action :same_user?, only: [:edit, :update]
+
 	def new
 		@user = User.new
 	end

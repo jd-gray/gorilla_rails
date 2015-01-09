@@ -1,4 +1,5 @@
-	
+
+
 %h1 Edit
 
 - @user.errors.full_messages.each do |msg|
@@ -10,4 +11,7 @@
 	= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
 	= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
 	= f.button :submit, class: "btn btn-primary"
-		
+
+= link_to "Back", posts_path, class: "btn btn-primary"
+
+

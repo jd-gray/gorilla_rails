@@ -14,4 +14,10 @@ module SessionsHelper
 			redirect_to root_path
 		end
 	end
+
+	def same_user?
+		if @user.username != current_user.username
+			redirect_to posts_path
+		end
+	end
 end

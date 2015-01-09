@@ -21,11 +21,6 @@
 				.ul.nav.navbar-nav
 					- if logged_in?
 						%li= link_to "New Post", new_post_path
-						%li= link_to "Account", edit_user_path(current_user.id)
-						%li= link_to "Log Out", logout_path, method: :delete
-						%li
-							= "Hello,"
-							= current_user.username
 					- else
 						%li= link_to "Sign Up", signup_path
 						%li= link_to "Log In", login_path
@@ -34,6 +29,16 @@
 					- if logged_in?
 						%input.form-control{:type=>"text", :placeholder=>"Search"}
 							%button{:type=>"submit", :class=>"btn btn-info"} Submit
+				%ul.nav.navbar-nav.navbar-right
+					%li.dropdown
+						%a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+							= current_user.username
+							%span.caret
+						%ul.dropdown-menu{:role => "menu"}
+							- if logged_in?
+								%li= link_to "My Account", edit_user_path(current_user.id)
+							%li.divider
+							%li= link_to "Log Out", logout_path, method: :delete
 .container
 	= yield
 

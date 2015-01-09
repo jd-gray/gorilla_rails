@@ -1,8 +1,8 @@
 %h1 Log In
 
 = simple_form_for :login do |f|
-	= f.input :email
-	= f.input :password
-	= f.button :submit, class: "btn btn-primary"
+	= f.input :email, label: false, placeholder: "Email"
+	= f.input :password, label: false, placeholder: "Password", input_html: { maxlength: 20 }
+	= f.submit "Login", class: "btn btn-primary"
 
 

@@ -16,13 +16,16 @@
 					%span.icon-bar
 					%span.icon-bar
 					%span.icon-bar
-				.navbar-brand= link_to "Gorilla", root_path
+				.navbar-brand= link_to "Gorilla", posts_path
 			.collapse.navbar-collapse#bs-example-navbar-collapse-1
 				.ul.nav.navbar-nav
 					- if logged_in?
 						%li= link_to "New Post", new_post_path
 						%li= link_to "Account"
 						%li= link_to "Log Out", logout_path, method: :delete
+						%li
+							= "Hello,"
+							= current_user.username
 					- else
 						%li= link_to "Sign Up", signup_path
 						%li= link_to "Log In", login_path

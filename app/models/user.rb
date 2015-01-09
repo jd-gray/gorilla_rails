@@ -28,4 +28,11 @@ class User
   	end
   end
 
+  # validates if name, email, and password exists
+  # validates_presence_of :name, :email, :password --> another way
+  validates :username, presence: true
+
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  # length is 6-20
+  validates :password, presence: true, length: { in: 6..20 }, confirmation: true
 end

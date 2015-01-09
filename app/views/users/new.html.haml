@@ -1,8 +1,13 @@
 %h1 Sign Up
+
+- @user.errors.full_messages.each do |msg|
+	%li= msg
+
 = simple_form_for @user, html: { multipart: true } do |f|
-	= f.input :username
-	= f.input :email
-	= f.input :password
+	= f.input :username, label: false, placeholder: "Username"
+	= f.input :email, label: false, placeholder: "Email, eg. jaredrocks@example.com"
+	= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
+	= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
 	= f.button :submit, class: "btn btn-primary"
 
 

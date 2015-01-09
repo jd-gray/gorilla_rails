@@ -8,4 +8,10 @@ module SessionsHelper
 	def logged_in?
 		session[:user_id] != nil
 	end
+
+	def user_authorized?
+		if @current_user === nil
+			redirect_to root_path
+		end
+	end
 end

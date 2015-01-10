@@ -1,14 +1,6 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+	before_action :post_find, only: [:show, :edit, :update, :destroy, :upvote]
 	before_action :user_authorized?
-
-	# def search
- #    	if params[:search].present?
- #      		@posts = Post.search(params[:search])
- #    	else
- #      		@posts = Post.all?
- #    	end
- #  	end
 
 	def index
 		@posts = Post.all.order("created_at DESC")
@@ -56,20 +48,13 @@ class PostsController < ApplicationController
 		redirect_to :back
 	end
 
-	def downvote
-		@post.downvotes += 1
-		@post.save
-		redirect_to :back
-	end
-
-
 	private
 
-	def post_params
-		params.require(:post).permit(:title, :description, :image)
+	def post_find
+		@post = Post.find(params[:id])
 	end
 
-	def find_post
-		@post = Post.find(params[:id])
+	def post_params
+		params.require(:post).permit(:title, :description, :image, :category_id)
 	end
 end

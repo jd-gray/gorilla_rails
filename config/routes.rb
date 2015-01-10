@@ -13,6 +13,5 @@ Rails.application.routes.draw do
 	end
 
 	get '/upvote/:id' => 'posts#upvote', as: :upvote
-	get '/downvote/:id' => 'posts#downvote', as: :downvote
  
 end

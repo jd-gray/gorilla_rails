@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
+
   has_many :posts
+  has_many :comments
 
   field :username, type: String
   field :email, type: String

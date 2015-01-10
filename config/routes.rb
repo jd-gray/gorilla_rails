@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
 	resources :posts do
 		resources :comments, only: :create
-	end 
+	end
+
+	get '/upvote/:id' => 'posts#upvote', as: :upvote
+	get '/downvote/:id' => 'posts#downvote', as: :downvote
  
 end

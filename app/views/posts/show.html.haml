@@ -8,7 +8,17 @@
 	Created at:
 	= @post.date_published
 
+- @comments.each do |comment|
+	= comment.user.username
+	= comment.body
 = render "comments/form"
+
+= link_to "Like", upvote_path, class: "btn btn-primary fa fa-thumbs-o-up"
+
+= link_to "Dislike", downvote_path, class: "btn btn-danger fa fa-thumbs-o"
+
+%p= @post.upvotes
+%p= @post.downvotes
 
 = link_to "Back", posts_path
 

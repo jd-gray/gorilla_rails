@@ -10,7 +10,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Added gems
 gem 'mongoid', '~> 4.0.0'
@@ -23,5 +23,6 @@ gem 'mini_magick' # for post-upload image processing
 gem 'bootstrap-sass', '~> 3.3.1.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'simple_form', '~> 3.1.0'
+gem 'acts_as_votable', '~> 0.10.0'
 
 

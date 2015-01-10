@@ -1,20 +1,21 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :user_authorized?
 
-	def search
-    	if params[:search].present?
-      		@posts = Post.search(params[:search])
-    	else
-      		@posts = Post.all?
-    	end
-  	end
+	# def search
+ #    	if params[:search].present?
+ #      		@posts = Post.search(params[:search])
+ #    	else
+ #      		@posts = Post.all?
+ #    	end
+ #  	end
 
 	def index
 		@posts = Post.all.order("created_at DESC")
 	end
 
 	def show
+		@comments = Comment.where(post_id: @post)
 	end
 
 	def new
@@ -48,6 +49,19 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to post_path
 	end
+
+	def upvote
+		@post.upvotes += 1
+		@post.save
+		redirect_to :back
+	end
+
+	def downvote
+		@post.downvotes += 1
+		@post.save
+		redirect_to :back
+	end
+
 
 	private
 

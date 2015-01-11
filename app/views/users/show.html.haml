@@ -13,17 +13,44 @@
 	= "Total Posts: "
 	= current_user.posts.count
 
+/ Button trigger modal
+%button.btn.btn-primary.btn-lg{"data-target" => "#commentModal", "data-toggle" => "modal", :type => "button"}
+	Prior Comments
 
-- @user.posts.each do |post|
-	= image_tag post.image.url(:medium)
-	= post.title
-	= post.description
+/ Modal
+#commentModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog
+		.modal-content
+			.modal-header
+				%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+					%span{"aria-hidden" => "true"} &times;
+				%h4#myModalLabel.modal-title Comment History
+			.modal-body
+				- @user.comments.each do |comment|
+					= comment.body
+			.modal-footer
+				%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
-%br
 
-- @user.comments.each do |comment|
-	= comment.body
+/ Button trigger modal
+%button.btn.btn-primary.btn-lg{"data-target" => "#postModal", "data-toggle" => "modal", :type => "button"}
+	Prior Posts
 
-= link_to "Edit", edit_user_path
+/ Modal
+#postModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog
+		.modal-content
+			.modal-header
+				%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+					%span{"aria-hidden" => "true"} &times;
+				%h4#myModalLabel.modal-title Post History
+			.modal-body
+				- @user.posts.each do |post|
+					= image_tag post.image.url(:medium)
+					= post.title
+					= post.description
+			.modal-footer
+				%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
-
+= link_to "Edit", edit_user_path, class: "btn btn-primary btn-lg"
+       

@@ -1,4 +1,8 @@
-- if logged_in?
-	%h1 New Post
-
-	= render 'form'
+.col-md-6.col-md-offset-3
+	.row
+		.panel.panel-default
+			.panel-heading
+				- if logged_in?
+					%h1 New Post
+			.panel-body
+				= render 'form'

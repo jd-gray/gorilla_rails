@@ -1,34 +1,35 @@
-= image_tag @post.image.url(:medium)
-%h1= @post.title
-%p= @post.description
-%p 
-	Created by:
-	= image_tag @post.user.user_image.url(:small)
-	= @post.user.username
-	%br
-	Created at:
-	= @post.date_published
+.col-md-6.col-md-offset
+	.panel.panel-default
+		.panel-heading
+			= image_tag @post.image.url(:medium)
+		.panel-body
+			%h2= @post.title
+			%a.twitter-share-button{"data-count" => "none", "data-dnt" => "true", "data-via" => "twitterdev", :href => "https://twitter.com/share"}
+			:javascript
+				window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+			%p= @post.description
+		.panel-footer
+			%p 
+				= image_tag @post.user.user_image.url(:small)
+				= @post.user.username
+				|
+				= @post.date_published
+			= link_to "Back", posts_path, class: "btn btn-primary"
+			- if @post.user.username == current_user.username
+				= link_to "Edit", edit_post_path, class: "btn btn-primary"
+				= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger"
+.col-md-6.col-md-offset
+	.panel.panel-default
+		.panel-heading
+			%h3 Add a Comment
+			%h4= pluralize(@comments.count, "Comment")
+		.panel-body
+			= render "comments/form"
+			- @comments.each do |comment|
+				= image_tag comment.user.user_image.url(:small)
+				= comment.user.username
+				%p= comment.body
 
-%h2= pluralize(@comments.count, "Comment")
-- @comments.each do |comment|
-	= image_tag current_user.user_image.url(:small)
-	= comment.user.username
-	%p= comment.body
-
-= render "comments/form"
-
-= link_to "Like", upvote_path, class: "btn btn-primary fa fa-thumbs-o-up"
-%p= @post.upvotes
-
-%a.twitter-share-button{"data-count" => "none", "data-dnt" => "true", "data-via" => "twitterdev", :href => "https://twitter.com/share"}
-:javascript
-	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
-
-= link_to "Back", posts_path
-
-- if @post.user.username == current_user.username
-	= link_to "Edit", edit_post_path
-	= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }
 
 
 

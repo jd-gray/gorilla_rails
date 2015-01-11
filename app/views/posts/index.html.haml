@@ -3,10 +3,12 @@
 		- @posts.each do |post|
 			.box.panel.panel-default
 				= link_to (image_tag post.image.url(:medium)), post
-				.panel-body	
-					%h2= link_to post.title, post
+				.panel-body-heading
+					%h3= link_to post.title, post
+				.panel-footer
 					%p
 					= image_tag post.user.user_image.url(:small)
 					= post.user.username
+					|
 					%i.fa.fa-comment
 					= post.comments.count

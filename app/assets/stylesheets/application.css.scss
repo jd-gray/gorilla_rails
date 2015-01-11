@@ -28,6 +28,10 @@
     margin: auto;
 }
 
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
 #posts.transitions-enabled {
 	margin: 0 auto;
 	width: 300px;

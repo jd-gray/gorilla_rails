@@ -1,17 +1,20 @@
-
-
-%h1 Edit
-
-- @user.errors.full_messages.each do |msg|
-	%li= msg
-
-= simple_form_for @user, html: { multipart: true } do |f|
-	= f.input :username, label: false, placeholder: "Username"
-	= f.input :email, label: false, placeholder: "Email, eg. jaredrocks@example.com"
-	= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
-	= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
-	= f.button :submit, class: "btn btn-primary"
-
-= link_to "Back", posts_path, class: "btn btn-primary"
+.col-md-6.col-md-offset-3
+	.row
+		.panel.panel-default
+			.panel-heading
+				%h1 Edit
+			.panel-body
+				= simple_form_for @user, html: { multipart: true } do |f|
+					.form-group
+						= f.input :username, label: false, placeholder: "Username"
+					.form-group
+						= f.input :email, label: false, placeholder: "Email, eg. jaredrocks@example.com"
+					.form-group
+						= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
+					.form-group
+						= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
+					.form-group
+						= f.button :submit, class: "btn btn-primary"
+						= link_to "Back", posts_path, class: "btn btn-danger"
 
 

@@ -1,8 +1,12 @@
 = simple_form_for @post, html: { multipart: true } do |f|
-	= f.file_field :image
-	= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category" }
-	= f.input :title, input_html: { class: 'form-control' }
-	= f.input :description, input_html: { class: 'form-control' }
-	= f.button :submit, class: "btn btn-primary"
-
-= link_to "Cancel", posts_path
+	.form-group
+		= f.file_field :image
+	.form-group
+		= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category" }
+	.form-group
+		= f.input :title, input_html: { class: 'form-control' }
+	.form-group
+		= f.input :description, input_html: { class: 'form-control' }
+	.form-group
+		= f.button :submit, class: "btn btn-primary"
+		= link_to "Cancel", posts_path, class: "btn btn-danger"

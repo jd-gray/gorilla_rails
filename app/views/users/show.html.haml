@@ -1,0 +1,27 @@
+%h1
+	= "Hello"
+	= current_user.username
+
+%p 
+	= image_tag current_user.user_image.url(:medium)
+
+%p
+	= "Total Comments: "
+	= current_user.comments.count
+
+%p
+	= "Total Posts: "
+	= current_user.posts.count
+
+
+- @user.posts.each do |post|
+	= image_tag post.image.url(:medium)
+	= post.title
+	= post.description
+
+%br
+
+- @user.comments.each do |comment|
+	= comment.body
+
+

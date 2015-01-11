@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :post_find, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :post_find, only: [:show, :edit, :update, :destroy]
 	before_action :user_authorized?
 
 	def index
@@ -40,12 +40,6 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		redirect_to post_path
-	end
-
-	def upvote
-		@post.upvotes += 1
-		@post.save
-		redirect_to :back
 	end
 
 	private

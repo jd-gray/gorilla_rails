@@ -19,6 +19,16 @@
 @import "bootstrap";
 
 
+.navbar-brand{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+
 #posts.transitions-enabled {
 	margin: 0 auto;
 	width: 100%;

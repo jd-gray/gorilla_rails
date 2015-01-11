@@ -6,7 +6,7 @@
 				.panel-body	
 					%h2= link_to post.title, post
 					%p
-					Created by:
+					= image_tag post.user.user_image.url(:small)
 					= post.user.username
 					%i.fa.fa-comment
 					= post.comments.count

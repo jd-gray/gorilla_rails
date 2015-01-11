@@ -3,6 +3,7 @@
 %p= @post.description
 %p 
 	Created by:
+	= image_tag @post.user.user_image.url(:small)
 	= @post.user.username
 	%br
 	Created at:
@@ -10,7 +11,8 @@
 
 %h2= pluralize(@comments.count, "Comment")
 - @comments.each do |comment|
-	%p= comment.user.username
+	= image_tag current_user.user_image.url(:small)
+	= comment.user.username
 	%p= comment.body
 
 = render "comments/form"

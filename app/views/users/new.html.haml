@@ -1,10 +1,15 @@
+
 %h1 Sign Up
 
 = simple_form_for @user, html: { multipart: true } do |f|
 	= f.input :username, label: false, placeholder: "Username"
 	= f.input :email, label: false, placeholder: "Email, eg. jaredrocks@example.com"
+	= f.label "Add a Photo"
+	= f.file_field :user_image
+	%br
 	= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
 	= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
 	= f.button :submit, class: "btn btn-primary"
 	
 = link_to "Back", posts_path, class: "btn btn-primary"
+

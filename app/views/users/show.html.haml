@@ -53,4 +53,5 @@
 				%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
 = link_to "Edit", edit_user_path, class: "btn btn-primary btn-lg"
+= link_to "Delete Account", :user, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg"
        

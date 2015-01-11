@@ -20,6 +20,10 @@
 = link_to "Like", upvote_path, class: "btn btn-primary fa fa-thumbs-o-up"
 %p= @post.upvotes
 
+%a.twitter-share-button{"data-count" => "none", "data-dnt" => "true", "data-via" => "twitterdev", :href => "https://twitter.com/share"}
+:javascript
+	window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+
 = link_to "Back", posts_path
 
 - if @post.user.username == current_user.username

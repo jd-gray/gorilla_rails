@@ -1,7 +1,4 @@
 Rails.application.routes.draw do 
-
-	root 'sessions#new'
-
 	resources :users
   	get '/signup' => 'users#new'
   	get '/login'     => 'sessions#new'
@@ -11,7 +8,5 @@ Rails.application.routes.draw do
 	resources :posts do
 		resources :comments, only: :create
 	end
-
-	get '/upvote/:id' => 'posts#upvote', as: :upvote
- 
+	root 'sessions#new'
 end

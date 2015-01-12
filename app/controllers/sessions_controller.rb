@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id.to_s
 			redirect_to posts_path
 		else
-			redirect_to login_path
+			redirect_to root_path
 		end
 	end
 

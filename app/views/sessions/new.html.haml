@@ -1,12 +1,16 @@
-.col-md-6.col-md-offset-3
-	.row
-		.panel.panel-default
-			.panel-heading
-				%h1 Log In
-			.panel-body
-				= simple_form_for :login do |f|
-					= f.input :email, label: false, placeholder: "Email"
-					= f.input :password, label: false, placeholder: "Password", input_html: { maxlength: 20 }
-					= f.submit "Login", class: "btn btn-primary"
-					= link_to "Back", posts_path, class: "btn btn-danger"
+.container
+	.row.vertical-center-row
+		.col-lg-12
+			.row
+				.col-xs-6.col-xs-offset-6
+					.form-inline
+						.form-group
+							= simple_form_for :login do |f|
+								= f.input :email, label: false, placeholder: "Email"
+								= f.input :password, label: false, placeholder: "Password", input_html: { maxlength: 20 }
+								= f.submit "Login", class: "btn btn-primary"
+						%p
+						= "Need an Account?"
+						= link_to "Sign Up", signup_path
+
 

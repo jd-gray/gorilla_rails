@@ -15,6 +15,6 @@
 						= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }
 					.form-group
 						= f.button :submit, class: "btn btn-primary"
-						= link_to "Back", posts_path, class: "btn btn-danger"
+						= link_to "Back", user_path(@user.id), class: "btn btn-danger"
 
 

@@ -25,10 +25,12 @@
 			%h4= pluralize(@comments.count, "Comment")
 		.panel-body
 			= render "comments/form"
+		.panel-footer
 			- @comments.each do |comment|
 				= image_tag comment.user.user_image.url(:small)
 				= comment.user.username
 				%p= comment.body
+
 
 
 

@@ -2,7 +2,7 @@
 	.form-group
 		= f.file_field :image
 	.form-group
-		= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Sport" }
+		= f.collection_select :category_id, Category.all, :_id, :name, { prompt: "Choose a Sport" }
 	.form-group
 		= f.input :title, label: false, placeholder: "Title", input_html: { class: 'form-control' }
 	.form-group

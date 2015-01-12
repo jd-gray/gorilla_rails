@@ -4,7 +4,7 @@ class Post
 
   belongs_to :user
   belongs_to :category
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   field :title, type: String
   field :description, type: String

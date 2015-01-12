@@ -10,6 +10,9 @@
 					.form-group
 						= f.input :email, label: false, placeholder: "Email, eg. jaredrocks@example.com"
 					.form-group
+						= f.label "Add a Photo"
+						= f.file_field :user_image
+					.form-group
 						= f.input :password, label: false, placeholder: "Password", hint: 'Minimum 6 Characters.', input_html: { maxlength: 20 }
 					.form-group
 						= f.input :password_confirmation, label: false, placeholder: "Repeat your Password", input_html: { maxlength: 20 }

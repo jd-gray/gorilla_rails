@@ -31,11 +31,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		if @user.destroy
-			redirect_to root_path
-		else
-			redirect_to user_path(current_user.id)
-		end
+		@user.destroy
+		session.delete(:user_id)
+		redirect_to root_path
 	end
 
 	private

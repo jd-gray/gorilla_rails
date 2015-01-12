@@ -41,4 +41,5 @@ class User
   # length is 6-20
   validates :password, presence: true, length: { in: 6..20 }, confirmation: true
   # unless => password_digest.present?
+  validates :user_image, presence: true
 end

@@ -1,8 +1,8 @@
 = simple_form_for @post, html: { multipart: true } do |f|
 	.form-group
-		= f.file_field :image
+		= f.input :image
 	.form-group
-		= f.collection_select :category_id, Category.all, :_id, :name, { prompt: "Choose a Sport" }
+		= f.association :category
 	.form-group
 		= f.input :title, label: false, placeholder: "Title", input_html: { class: 'form-control' }
 	.form-group

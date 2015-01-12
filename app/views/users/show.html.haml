@@ -28,6 +28,7 @@
 								- @user.comments.each do |comment|
 									.panel-footer
 										= comment.body
+										= comment.date_added
 							.modal-footer
 								%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 

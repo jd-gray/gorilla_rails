@@ -11,5 +11,5 @@ class Comment
   	created_at.localtime.strftime("%-m/%-d/%Y | %l:%M %p")
   end
 
-  validates :body, presence: true
+  validates_presence_of :body
 end

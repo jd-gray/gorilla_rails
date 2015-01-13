@@ -13,30 +13,68 @@
 .postform {
 	.form-group {
 		input.btn.btn-default.btn.btn-primary {
-			background-color: #019875;
+			background-color: #6C7A89;
 			border: none;
 			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
 		}
 		a.btn.btn-danger {
 			background-color: #CF000F;
 			border: none;
 			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
 		}
 	}
 }
 
 .postshow {
+	.show.panel.panel-default {
+		border: none;
+	}
 	.panel-footer {
 		background-color: #F9BF3B;
 		a.btn.btn-primary {
-			background-color: #019875;
+			background-color: #6C7A89;
 			border: none;
 			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
 		}
 		a.btn.btn-danger {
 			background-color: #CF000F;
 			border: none;
 			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+	}
+}
+
+.col-md-5.col-md-offset {
+	.panel.panel-default {
+	border: none;
+		.panel-heading {
+			background-color: #F9BF3B;
+		}
+		.panel-body {
+			input.btn.btn-default.button {
+				background-color: #6C7A89;
+				color: white;
+				border: none;
+				border-radius: 0;
+				&:hover {
+					color: lightgray;
+				}
+			}
+		}
+		.panel-footer {
+			background-color: #F9BF3B;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 .postshow.col-md-7.col-md-offset
 	.show.panel.panel-default
-		.panel-heading
+		.panel-heading{ :style => "background-color: #F9BF3B;" }
 			= image_tag @post.image.url(:medium)
 		.panel-body
 			%h2= @post.title
@@ -30,7 +30,7 @@
 				= image_tag comment.user.user_image.url(:small)
 				= comment.user.username
 				%p= comment.body
-				= comment.date_added
+				%p= comment.date_added
 
 
 

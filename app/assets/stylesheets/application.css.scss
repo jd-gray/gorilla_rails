@@ -18,9 +18,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
 body {
 	font-family: Helvetica;
-	background-color: #F2F1EF;
+	background-color: #6C7A89;
 }
 
 .search {
@@ -28,20 +32,21 @@ body {
 	input {
 		border-radius: 2px;
 		height: 35px;
-		border: 2px solid #F9BF3B;
+		border: 2px solid #6C7A89;
 		outline: 0;
 		padding-left: 20px;
 	}
 	button {
-		height: 31px;
+		height: 34px;
 		width: 50px;
+		border: 2px solid #6C7A89;
 		border-radius: 2px;
 		background-color: #F2F1EF;
-		border: none;
 		color: black;
 		&:hover {
-			background-color: #F2F1EF;
-			color: black;
+			background-color: #6C7A89;
+			color: white;
+			border: 2px solid #6C7A89;
 		}
 	}
 }
@@ -58,12 +63,13 @@ body {
 	    top: 0;
 	    text-align: center;
 	    margin: auto;
+	    font-weight: 700;
 	}
 	a {
 		color: black;
 		&:hover{
 			text-decoration: none;
-			color: #F2F1EF;
+			color: gray;
 		}
 	}
 }
@@ -74,7 +80,7 @@ body {
 			a {
 				color: black;
 				&:hover{
-					color: black;
+					color: gray;
 				}
 			}
 		}
@@ -88,20 +94,38 @@ body {
 #posts.transitions-enabled {
 	margin: 0 auto;
 	width: 300px;
+	.box.panel.panel-default.masonry-brick{
+		border: none;
+		border-radius: 0;
+	}
+	.panel-footer {
+		background-color: #F9BF3B;
+		border-radius: 0;
+	}
 	.box {
-		margin: .5px;
+		margin: 2px;
 		width: 300px;
 		text-align: center;
+		box-shadow: rgba(0, 0, 0, 0.09) 0 3px 0;
+		overflow: hidden;
 		img {
 			max-width: 100%;
 			text-align: center;
+			-webkit-transition: all .3s ease-out;
+	  		-moz-transition: all .3s ease-out;
+	 		-o-transition: all .3s ease-out;
+    		transition: all .3s ease-out;
+    		&:hover {
+    			transform: scale(1.075);
+    		}
 		}
 		a {
-			font-size: 18px;
+			font-size: 16px;
 			margin: 0;
 			color: black;
 			&:hover {
 				text-decoration: none;
+				color: gray;
 			}
 		}
 	}

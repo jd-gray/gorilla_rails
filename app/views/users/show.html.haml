@@ -1,4 +1,4 @@
-.col-md-8.col-md-offset-2
+.show.col-md-8.col-md-offset-2
 	.row
 		.panel.panel-default
 			.panel-heading
@@ -6,14 +6,18 @@
 					= "Hello"
 					= current_user.username
 			.panel-body
-				%p 
-					= image_tag current_user.user_image.url(:medium)
-				%p
-					= "Total Comments: "
-					= current_user.comments.count
-				%p
-					= "Total Posts: "
-					= current_user.posts.count
+				.col-md-6
+					%p 
+						= image_tag current_user.user_image.url(:medium)
+				.col-md-4
+					%h3
+						= "Your Activity"
+					%p
+						= "Total Comments: "
+						= current_user.comments.count
+					%p
+						= "Total Posts: "
+						= current_user.posts.count
 			.panel-footer
 				%button.btn.btn-primary{"data-target" => "#commentModal", "data-toggle" => "modal", :type => "button"}
 					Prior Comments

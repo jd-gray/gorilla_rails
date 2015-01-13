@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
 	before_action :post_find, only: [:show, :edit, :update, :destroy]
 	before_action :user_authorized?
-	respond_to :html, :js
 
 	def index
 		if params[:q] != nil
 			@posts = Post.where( title: /#{params[:q]}/i )
+		elsif params[:category_id]
+			@posts = Post.where( category_id: params[:category_id])
 		else
 			@posts = Post.all.order("created_at DESC")
 		end

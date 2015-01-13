@@ -44,7 +44,7 @@
 								%li= link_to category.name, posts_path(category_id: category.id)
 				%ul.nav.navbar-nav.navbar-left
 					%li.dropdown
-						%form.navbar-form.navbar-left{:role => "search"}
+						%form.search.navbar-form.navbar-left{:role => "search"}
 							.form-group
 								= form_tag("/posts", method: "get") do
 									= text_field_tag(:q)

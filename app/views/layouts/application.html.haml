@@ -47,7 +47,7 @@
 						%form.search.navbar-form.navbar-left{:role => "search"}
 							.form-group
 								= form_tag("/posts", method: "get") do
-									= text_field_tag(:q)
+									= text_field_tag(:q, nil, placeholder: "Search..")
 									%button.btn-medium.btn-primary.glyphicon.glyphicon-search{:type => "submit"}
 .container
 	= yield

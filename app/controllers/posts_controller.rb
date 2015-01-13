@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :post_find, only: [:show, :edit, :update, :destroy]
 	before_action :user_authorized?
+	respond_to :html, :js
 
 	def index
 		if params[:q] != nil

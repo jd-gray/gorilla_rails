@@ -36,13 +36,28 @@ body {
 		border: none;
 	}
 }
-.navbar-brand{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    margin: auto;
+
+.navbar {
+	background-color: #34495E;
+	border: none;
+	border-radius: 0;
+	margin-top: 20px;
+	.navbar-brand {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    text-align: center;
+	    margin: auto;
+	}
+	a {
+		color: white;
+		letter-spacing: 1px;
+		&:hover{
+			text-decoration: none;
+			color: #67809F;
+		}
+	}
 }
 
 .dropdown:hover .dropdown-menu {

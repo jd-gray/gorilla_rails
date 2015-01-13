@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 	before_action :user_authorized?
 
 	def index
-		@posts = Post.all.order("created_at DESC")
+		if params[:q] != nil
+			@posts = Post.where( title: /#{params[:q]}/i )
+		else
+			@posts = Post.all.order("created_at DESC")
+		end
 	end
 
 	def show

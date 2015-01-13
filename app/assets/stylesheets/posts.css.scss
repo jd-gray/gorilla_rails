@@ -1,0 +1,42 @@
+.new {
+	margin-top: 50px;
+	.panel{
+		border: none;
+		.panel-heading{
+			background-color: #F9BF3B;
+			color: black;
+			text-align: center;
+		}
+	}
+}
+
+.postform {
+	.form-group {
+		input.btn.btn-default.btn.btn-primary {
+			background-color: #019875;
+			border: none;
+			border-radius: 0;
+		}
+		a.btn.btn-danger {
+			background-color: #CF000F;
+			border: none;
+			border-radius: 0;
+		}
+	}
+}
+
+.postshow {
+	.panel-footer {
+		background-color: #F9BF3B;
+		a.btn.btn-primary {
+			background-color: #019875;
+			border: none;
+			border-radius: 0;
+		}
+		a.btn.btn-danger {
+			background-color: #CF000F;
+			border: none;
+			border-radius: 0;
+		}
+	}
+}

@@ -6,12 +6,12 @@
 					= "Hello"
 					= current_user.username
 			.panel-body
-				.col-md-6
+				.col-md-7
 					%p 
 						= image_tag current_user.user_image.url(:medium)
-				.col-md-4
+				.col-md-5
 					%h3
-						= "Your Activity"
+						= "Account Activity"
 					%p
 						= "Total Comments: "
 						= current_user.comments.count
@@ -30,9 +30,10 @@
 								%h4#myModalLabel.modal-title Comment History
 							.modal-body
 								- @user.comments.each do |comment|
-									.panel-footer
+									.panel-footer{ :style => "background-color: #F9BF3B"}
 										= comment.body
 										= comment.date_added
+										
 							.modal-footer
 								%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 
@@ -47,12 +48,15 @@
 								%h4#myModalLabel.modal-title Post History
 							.modal-body
 								- @user.posts.each do |post|
-									.panel-heading
+									.panel-heading{ :style => "background-color: #F9BF3B"}
 										= image_tag post.image.url(:medium)
 									.panel-body
 										%strong= post.title
 									.panel-footer
 										= post.description
+									%br
+									%p{ :style => "border-top: 1px solid black"}
+
 							.modal-footer
 								%button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 

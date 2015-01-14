@@ -38,15 +38,15 @@ body {
 	}
 	button {
 		height: 34px;
-		width: 50px;
+		width: 60px;
 		border: 2px solid #6C7A89;
 		border-radius: 2px;
-		background-color: #F2F1EF;
-		color: black;
+		background-color: #6C7A89;
+		color: white;
 		&:hover {
-			background-color: #6C7A89;
-			color: white;
-			border: 2px solid #6C7A89;
+			background-color: #F2F1EF;
+			color: black;
+			border: 2px solid #F2F1EF;
 		}
 	}
 }
@@ -64,6 +64,7 @@ body {
 	    text-align: center;
 	    margin: auto;
 	    font-weight: 700;
+	    font-size: 22px;
 	}
 	a {
 		color: black;
@@ -106,7 +107,7 @@ body {
 		margin: 2px;
 		width: 300px;
 		text-align: center;
-		box-shadow: rgba(0, 0, 0, 0.09) 0 3px 0;
+		box-shadow: rgba(0, 0, 0, 0.09) 3px 3px 0;
 		overflow: hidden;
 		img {
 			max-width: 100%;

@@ -1,5 +1,29 @@
 .signup {
 	margin-top: 150px;
+	outline: none;
+	.panel-body {
+		input.btn.btn-primary {
+			background-color: #2C3E50;
+			border: none;
+			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+		a.btn.btn-danger{
+			background-color: #CF000F;
+			border: none;
+			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+	}
+}
+
+.signup.panel.panel-default {
+	border-radius: 0;
+	border: none;
 }
 
 .show.col-md-8.col-md-offset-2 {
@@ -7,3 +31,39 @@
 		border: none;
 	}
 }
+
+.panel.panel-default {
+	.panel-heading {
+		background-color: #F9BF3B;
+		border-radius: 0;
+	}
+	.panel-footer {
+		background-color: #F9BF3B;
+		border-radius: 0;
+		button.btn.btn-primary {
+			background-color: #2C3E50;
+			border: none;
+			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+		a.btn.btn-primary{
+			background-color: #2C3E50;
+			border: none;
+			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+		a.btn.btn-danger {
+			background-color: #CF000F;
+			border: none;
+			border-radius: 0;
+			&:hover{
+				color: lightgray;
+			}
+		}
+	}
+}
+

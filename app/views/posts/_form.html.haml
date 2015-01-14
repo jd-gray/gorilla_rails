@@ -3,7 +3,7 @@
 		.form-group
 			= f.input :image
 		.form-group
-			= f.association :category
+			= f.association :category, required: true
 		.form-group
 			= f.input :title, label: false, placeholder: "Title", input_html: { class: 'form-control' }
 		.form-group

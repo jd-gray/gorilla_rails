@@ -11,6 +11,22 @@
 					= f.input :email, label: false, placeholder: "Email", required: true
 					= f.input :password, label: false, placeholder: "Password", input_html: { maxlength: 20 }
 					= f.submit "Login", class: "btn btn-primary"
-			%p.signup
+			.form-group
 			= "Need an Account?"
 			= link_to "Sign Up", signup_path
+
+
+:javascript
+	var animationDelay = 3000;
+	var offset = 3000;
+
+	function welcomeAnimate(x) {
+		setTimeout(function(){
+			$(x).animate({
+				opacity: "0.3"
+			}, animationDelay);
+		},$(x).index() * offset)
+	}
+	$("p").each(function(){
+		welcomeAnimate(this);
+	})

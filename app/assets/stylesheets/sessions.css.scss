@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background-image: image-url("madrid.jpg");
+	background-attachment:fixed;
+	background-size: auto;
+}
+
 .intro {
 	margin-top: 175px;
 	h1 {
@@ -9,5 +15,34 @@
 	}
 	p {
 		text-align: center;
+	}
+	.panel.panel-default {
+		border-radius: 0;
+		border: none;
+		box-shadow: rgba(0, 0, 0, 0.09) 3px 3px 0;
+		.panel-heading {
+			margin-bottom: 20px;
+			border-radius: 5px;
+		}
+		.panel-body {
+			margin-top: 20px;
+			.panel-heading {
+				background-color: #F9BF3B;
+			}
+			input.btn.btn-primary {
+				background-color: #2C3E50;
+				border: none;
+				border-radius: 0;
+				&:hover{
+				color: lightgray;
+				}
+			}
+			a {
+				color: #CF000F;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
 	}
 }

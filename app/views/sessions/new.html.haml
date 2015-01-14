@@ -3,9 +3,9 @@
 		.panel-body
 			.panel-heading
 				%h1= Gorilla
-				%p= "Submit your favorite sporting moments"
-				%p= "Capture the excitement"
-				%p= "Share the live events"
+				%p{ :style => "opacity: 0"}= "Submit your favorite sporting moments"
+				%p{ :style => "opacity: 0"}= "Capture the excitement"
+				%p{ :style => "opacity: 0"}= "Share the live events"
 			.form-group
 				= simple_form_for :login do |f|
 					= f.input :email, label: false, placeholder: "Email", required: true
@@ -17,13 +17,13 @@
 
 
 :javascript
-	var animationDelay = 3000;
-	var offset = 3000;
+	var animationDelay = 1500;
+	var offset = 1500;
 
 	function welcomeAnimate(x) {
 		setTimeout(function(){
 			$(x).animate({
-				opacity: "0.3"
+				opacity: "1"
 			}, animationDelay);
 		},$(x).index() * offset)
 	}

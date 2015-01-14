@@ -20,4 +20,8 @@ module SessionsHelper
 			redirect_to posts_path
 		end
 	end
+
+	def admin
+		current_user.username === "jaredadmin42"
+	end
 end

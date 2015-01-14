@@ -15,7 +15,7 @@
 				|
 				= @post.date_published
 			= link_to "Back", posts_path, class: "btn btn-primary"
-			- if @post.user.username == current_user.username
+			- if @post.user.username == current_user.username || admin
 				= link_to "Edit", edit_post_path, class: "btn btn-primary"
 				= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger"
 .col-md-5.col-md-offset
